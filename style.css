@@ -1,1 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+html, body {
+  height: 100vh;
+  background-color: azure;
+  overflow: hidden;
+  font-family: "Noto Sans", sans-serif;
+}
+  
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+  background-image: url("./assets/galaxy4.jpg"); 
+  background-size: cover;
+  background-position: center; 
+}
+   
+#canvas1 {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 9;
+}
+
+#logo {
+  display: flex;
+  position: fixed;
+  left: 5%;
+  top: 5%;
+  transform: translate(-50%, -50%); 
+  z-index: 4;
+  opacity: 0.8;
+  white-space: nowrap;
+  pointer-events: none;
+}
+   
+#logo > img {
+  height: 40px;
+  width: 40px;
+}
+     
+#control-bar-wrapper {
+position: absolute;
+top: 12%;
+left: 2%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;     
+  padding: 0.5rem;
+}
+   
+.toggle {
+  background-color: rgb(255, 255, 255, 0.02);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 2%;
+  left: 70px; 
+  z-index: 1; 
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  width: 8rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+}
+    
+.toggle > i {
+  color: white;
+  display: none;
+  height: 1rem;
+  width: 4rem;
+  font-size: 0.6rem;
+  line-height: 1rem;
+  text-align: center;
+}
+   
+.toggle[data-toggled="true"] > i.on {
+  display: block;
+}
+   
+.toggle[data-toggled="false"] > i.off {
+  display: block;
+}
+   
+#sound-message {
+  position: fixed;
+  top: 36%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 3;
+  padding: 0.75rem;
+  background-color: rgb(255 255 255 / 5%);
+  border-radius: 0.4rem;
+  transition: opacity 1000ms;
+  pointer-events: none;
+}
+   
+body:has(#sound-toggle[data-toggled="true"]) #sound-message {
+  opacity: 0;
+}
+
+#sound-message > p {
+  color: white;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+   
