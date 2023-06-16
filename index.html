@@ -1,1 +1,34 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Polyrythmic Spiral - Half Circle</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="./00-style.css">
+</head>
+<body>
+     <div class="container">
+          <div id="logo">
+               <img src="./assets/wings23.png" alt="" />
+          </div>
+          <div id="control-bar-wrapper">
+               <div id="control-bar">
+                    <button id="sound-toggle" class="toggle" type="button" data-toggled="false"  title="Toggle Pulse">
+                         <i class="fa-solid fa-music-slash off">Sound Off</i>
+                         <i class="fa-solid fa-music on">Sound On</i>
+                    </button>
+               </div>
+          </div>
+          
+          <div id="sound-message">
+               <p>Click anywhere to toggle sound</p>
+          </div>
+          
+          <canvas id="canvas1"></canvas>
+     </div>
+  
+     <script type="module" src="./02-halfCircle.js"></script> 
+</body>
+</html>
