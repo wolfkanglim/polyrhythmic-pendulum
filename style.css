@@ -15,7 +15,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: #111;
-  background-image: url("./assets/galaxy4.jpg"); 
+  background-image: url("./assets/images/galaxy4.jpg"); 
   background-size: cover;
   background-position: center; 
 }
