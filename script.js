@@ -2,10 +2,11 @@ const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
+///// Star Spinning background 
+
 let particlesArray = [];
 let hue = 0;
-
-// Star Spinning background //
 
 class Particle {
      constructor(moveRadius, step, position, size, color) {
@@ -36,7 +37,7 @@ function init(){
          let moveRadius = Math.random() * canvas.width /2;
         let position = Math.random() * Math.PI * 2; 
         let step = Math.random() * 0.001 + 0.0001;
-        let size = Math.random() * 2 + 0.01;
+        let size = Math.random() * 3 + 0.01;
         //let color = 'hsl(' + position + ', 100%, 50%)';
         let color = 'rgb('+ Math.random()*255 +', '+ Math.random()*255 +', '+ Math.random()*255 +')';
 
@@ -65,7 +66,9 @@ function init(){
 
 init();
  
-// neon colors 
+///// Polyrhythm Pendulum
+
+// neon colors 21
 const colors = [    
      '#39FF14', 
      '#7FFF00', 
@@ -90,31 +93,9 @@ const colors = [
      '#FFFFFF', 
 ];
 
-let arcs = [];
-const maxCycles = Math.max(colors.length, 50);
-const duration = 300;
-const startTime = new Date().getTime();
-
-let pulseEnabled = true; //show when sound enabled
-let soundEnabled = false;
-document.onvisibilitychange = () => soundEnabled = false;
-const toggleBtn = document.getElementById('sound-toggle');
-const soundMsg = document.getElementById('sound-message');
-canvas.addEventListener('click', () => {
-     soundEnabled = !soundEnabled;
-     if(soundEnabled){
-     toggleBtn.innerText = 'Sound On';
-     soundMsg.style.display = 'none';     
-} else {
-          soundMsg.style.display = 'block';     
-      toggleBtn.innerText = 'Sound Off';   
-     }     
-})
-
-ctx.strokeStyle = 'white';
-ctx.fillStyle = 'white';
-
- const audios = [
+//Vibraphone
+const audios = [
+     new Audio('./assets/vibraphone/key-0.mp3'),
      new Audio('./assets/vibraphone/key-1.mp3'),
      new Audio('./assets/vibraphone/key-2.mp3'),
      new Audio('./assets/vibraphone/key-3.mp3'),
@@ -136,28 +117,52 @@ ctx.fillStyle = 'white';
      new Audio('./assets/vibraphone/key-19.mp3'),
      new Audio('./assets/vibraphone/key-20.mp3'),
      new Audio('./assets/vibraphone/key-21.mp3'),
-      new Audio('./assets/vibraphone/key-22.mp3'),
-     new Audio('./assets/vibraphone/key-23.mp3'),
-     new Audio('./assets/vibraphone/key-24.mp3'),
-     new Audio('./assets/vibraphone/key-25.mp3'),
-     new Audio('./assets/vibraphone/key-26.mp3'),
-     new Audio('./assets/vibraphone/key-27.mp3'),
-     new Audio('./assets/vibraphone/key-28.mp3'),
-     new Audio('./assets/vibraphone/key-29.mp3'),
-     new Audio('./assets/vibraphone/key-30.mp3'),
-     new Audio('./assets/vibraphone/key-31.mp3'),
-     new Audio('./assets/vibraphone/key-32.mp3'),
-     new Audio('./assets/vibraphone/key-33.mp3'),
-     new Audio('./assets/vibraphone/key-34.mp3'),
-     new Audio('./assets/vibraphone/key-35.mp3'),
-     new Audio('./assets/vibraphone/key-36.mp3'),
-     new Audio('./assets/vibraphone/key-37.mp3'),
-]  
+     new Audio('./assets/vibraphone/key-22.mp3'),
+     new Audio('./assets/vibraphone/key-23.mp3'),   
+     new Audio('./assets/vibraphone/key-24.mp3'),   
+     new Audio('./assets/vibraphone/key-25.mp3'),   
+     new Audio('./assets/vibraphone/key-26.mp3'),   
+     new Audio('./assets/vibraphone/key-27.mp3'),   
+     new Audio('./assets/vibraphone/key-28.mp3'),   
+     new Audio('./assets/vibraphone/key-29.mp3'),   
+     new Audio('./assets/vibraphone/key-30.mp3'),   
+     new Audio('./assets/vibraphone/key-31.mp3'),   
+     new Audio('./assets/vibraphone/key-32.mp3'),   
+     new Audio('./assets/vibraphone/key-33.mp3'),   
+     new Audio('./assets/vibraphone/key-34.mp3'),   
+     new Audio('./assets/vibraphone/key-35.mp3'),   
+     new Audio('./assets/vibraphone/key-36.mp3'),   
+];
+
 
 audios.map(audio => {
-     audio.volume = 0.5;
      audio.currentTime = 0;
+     audio.volume = 0.4;
 })
+
+let arcs = [];
+const maxCycles = Math.max(colors.length, 50);
+const duration = 300;
+const startTime = new Date().getTime();
+
+let pulseEnabled = true; //show when sound enabled
+let soundEnabled = false;
+document.onvisibilitychange = () => soundEnabled = false;
+const toggleBtn = document.getElementById('sound-toggle');
+const soundMsg = document.getElementById('sound-message');
+canvas.addEventListener('click', () => {
+     soundEnabled = !soundEnabled;
+     if(soundEnabled){
+     toggleBtn.innerText = 'Sound On';
+     soundMsg.style.display = 'none';     
+     } else {
+          toggleBtn.innerText = 'Sound Off';
+          soundMsg.style.display = 'block';
+     }  
+})
+
+ctx.strokeStyle = 'white';
+ctx.fillStyle = 'white';
 
 // draw arc
 function drawArc(x, y, radius, start, end, action = 'stroke'){     
@@ -173,7 +178,7 @@ function drawArc(x, y, radius, start, end, action = 'stroke'){
 
 function calculateVelocity(index){
      const numberOfCycles = maxCycles - index;
-     return numberOfCycles * Math.PI / duration;
+     return numberOfCycles * Math.PI / duration; //radian/seconds
 };
 
 function calculateNextImpactTime(currentImpactTime, velocity){
@@ -228,7 +233,6 @@ function draw(){
      const currentTime = new Date().getTime();
      let elapsedTime = (currentTime - startTime) / 1000;
 
-     //const length = canvas.width * 0.9;
      const length = canvas.width * 0.75;
      //const length = canvas.height * 0.9;
 
@@ -277,7 +281,7 @@ function draw(){
 
           ctx.globalAlpha = determineOpacity(currentTime, arc.lastImpactTime, 0.4, 1, 1000);
 
-          //draw vibraphone
+          //draw gayageum24
           let rectLeftX = centerX - (space * index) - (length * 0.05) - (space * 0.5);
           let rectRightX = centerX + (space * index) + (length * 0.05) - (space * 0.5);
           let rectY = baseStart.y + 3;
@@ -288,7 +292,7 @@ function draw(){
           //impact sounds
            if(currentTime >= arc.nextImpactTime){
                if(soundEnabled){
-                    audios[index].play();
+                    audios[index + 10].play();
                     arc.lastImpactTime = arc.nextImpactTime;
                }
                arc.nextImpactTime = calculateNextImpactTime(arc.lastImpactTime, arc.velocity);
