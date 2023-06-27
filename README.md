@@ -1,30 +1,11 @@
 # polyrhythmic-pendulum
 Created with Vanilla JavaScript canvas
+
+https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/475cbb0e-6ef7-4fd6-9e54-da962f1279c3
+
+
 ## Demo Video 
-![test]https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/9494c42d-874b-40d1-b877-3c31198bd9cb
 
-
-
-https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/fd3ab147-85c2-4968-a296-0085015b13b4
-
-
-
-### Angle Pendulum
-
-https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/fa176014-0ccb-4ff1-9393-d4a1c31bc77b
-
-
-
-https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/f0022852-0023-436e-a6f3-e9be089ba42b
-
-lum
-
-### Half Circle Pendulum
-https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/e5dd1fed-3ed6-470e-ab4b-b88908acc2f6
-###  Circle Pendulum
-
-
-https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/567d9c99-1659-4841-817c-d9dd2455f3a4
 
 
 
