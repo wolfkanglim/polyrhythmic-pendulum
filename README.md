@@ -4,6 +4,10 @@ Created with Vanilla JavaScript canvas
 
 ### Angle Pendulum
 
+https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/fa176014-0ccb-4ff1-9393-d4a1c31bc77b
+
+
+
 https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/f0022852-0023-436e-a6f3-e9be089ba42b
 
 lum
