@@ -1,6 +1,14 @@
 # polyrhythmic-pendulum
 Created with Vanilla JavaScript canvas
 
+https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/a2d796e1-ef6e-4bfe-8c65-f8880b95e54d
+
+
+
+https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/a7af607c-defe-402f-b310-a593d434b9f3
+
+
+
 https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/475cbb0e-6ef7-4fd6-9e54-da962f1279c3
 
 
