@@ -1,6 +1,13 @@
 # polyrhythmic-pendulum
 Created with Vanilla JavaScript canvas
 ## Demo Video 
+![test]https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/9494c42d-874b-40d1-b877-3c31198bd9cb
+
+
+
+https://github.com/wolfkanglim/polyrhythmic-pendulum/assets/74490365/fd3ab147-85c2-4968-a296-0085015b13b4
+
+
 
 ### Angle Pendulum
 
